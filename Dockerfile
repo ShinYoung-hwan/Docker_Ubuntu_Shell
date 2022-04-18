@@ -18,12 +18,14 @@ RUN \
   # basic packages
   apt install -y build-essential && \
   apt install -y software-properties-common && \
+  apt install -y locales && \
   apt install -y curl git man unzip vim wget unzip && \
   rm -rf /var/lib/apt/lists/*
 
 
 # Add files.
-# ADD 
+ADD root/setup.sh /root/setup.sh
+ADD root/.bashrc /root/.bashrc
 
 # Set environment variables.
 ENV HOME /root
